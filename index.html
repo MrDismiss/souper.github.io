@@ -2,25 +2,29 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="">
 
 
 
 
 
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -110,9 +114,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
+    version: '5.1.1',
     sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: ,
+    motion: "",
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -155,12 +161,6 @@
 
 
 
-
-
-
-
-
-
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -171,8 +171,7 @@
   
 
   <div class="container sidebar-position-left 
-   page-home 
- ">
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -211,7 +210,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             首页
           </a>
@@ -221,7 +220,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             分类
           </a>
@@ -231,7 +230,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             关于
           </a>
@@ -241,7 +240,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             归档
           </a>
@@ -251,7 +250,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             标签
           </a>
@@ -285,7 +284,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://soupergeng.github.io/2017/08/03/五十六已然知天命/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -331,7 +334,7 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
               <time title="更新于" itemprop="dateModified" datetime="2017-08-03T22:09:02+08:00">
                 2017-08-03
@@ -375,7 +378,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -391,7 +394,10 @@
       </header>
     
 
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -415,18 +421,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -440,6 +443,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -452,7 +459,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://soupergeng.github.io/2017/07/26/推荐Android开发收藏的良心网站/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -498,7 +509,7 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
               <time title="更新于" itemprop="dateModified" datetime="2017-08-23T17:48:18+08:00">
                 2017-08-23
@@ -542,7 +553,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -558,7 +569,10 @@
       </header>
     
 
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -584,18 +598,15 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -609,6 +620,10 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -621,7 +636,11 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://soupergeng.github.io/2017/07/26/推荐Chrome的一些插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -667,7 +686,7 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
               <time title="更新于" itemprop="dateModified" datetime="2017-08-03T22:07:57+08:00">
                 2017-08-03
@@ -711,7 +730,7 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -727,7 +746,10 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
       </header>
     
 
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -752,18 +774,15 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -777,6 +796,10 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -789,7 +812,11 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://soupergeng.github.io/2017/07/24/使用Tampermonkey神器来看各大视频网站的VIP视频/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -835,7 +862,7 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
               <time title="更新于" itemprop="dateModified" datetime="2017-08-03T22:06:25+08:00">
                 2017-08-03
@@ -857,7 +884,7 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -873,7 +900,10 @@ Android 现如今已经成为人们不可或缺的系统了，那么这么重要
       </header>
     
 
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -895,18 +925,15 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -920,6 +947,10 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -932,7 +963,11 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://soupergeng.github.io/2017/07/24/Android-Studio-MAC-版-快捷键详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -978,7 +1013,7 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
               <time title="更新于" itemprop="dateModified" datetime="2017-08-03T22:10:32+08:00">
                 2017-08-03
@@ -1022,7 +1057,7 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1038,7 +1073,10 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
       </header>
     
 
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -1058,18 +1096,15 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -1083,6 +1118,10 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1095,7 +1134,11 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://soupergeng.github.io/2017/07/17/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1141,7 +1184,7 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
               <time title="更新于" itemprop="dateModified" datetime="2017-07-21T21:10:46+08:00">
                 2017-07-21
@@ -1163,7 +1206,7 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1179,7 +1222,10 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
       </header>
     
 
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -1199,18 +1245,15 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -1224,6 +1267,10 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1261,19 +1308,22 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
 
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="SouperGeng" />
-          <p class="site-author-name" itemprop="name">SouperGeng</p>
-           
-              <p class="site-description motion-element" itemprop="description">我不敢倒下，因为身后已空无一人。</p>
           
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.jpg"
+              alt="SouperGeng" />
+          
+            <p class="site-author-name" itemprop="name">SouperGeng</p>
+            <p class="site-description motion-element" itemprop="description">我不敢倒下，因为身后已空无一人。</p>
         </div>
+
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
+            
               <a href="/archives/">
+            
                 <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -1312,28 +1362,19 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
               <span class="links-of-author-item">
                 <a href="https://github.com/SouperGeng" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://weibo.com/u/5102560556/home?wvr=5" target="_blank" title="weibo">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  weibo
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>weibo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.zhihu.com/people/geng-kun-zhou/activities" target="_blank" title="知乎">
                   
-                    <i class="fa fa-fw fa-zhihu"></i>
-                  
-                  知乎
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>知乎</a>
               </span>
             
           
@@ -1372,22 +1413,25 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">SouperGeng</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.1</div>
 
 
         
+
+
+
+
+
+
 
         
       </div>
@@ -1469,9 +1513,9 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
 
 
 
-  
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
   
 
@@ -1503,6 +1547,8 @@ Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管�
 
 
   
+
+
 
 
 
