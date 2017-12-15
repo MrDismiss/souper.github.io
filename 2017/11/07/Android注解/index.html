@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android注解笔记 | Fighting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android注解笔记作为Android开发中熟知的注解，注解有以下作用：  降低项目的耦合度。 自动完成一些规律性的代码。 自动生成java代码，减轻开发者的工作量。  1、元注解​    元注解是由java提供的基础注解，负责注解其它注解。  @Retention: 注解保留生命周期 @Target: 注解对象的作用范围 @Inherited: 注释的类是否可以被继承 @Documented：">
+<meta name="keywords" content="注解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android注解笔记">
+<meta property="og:url" content="https://soupergeng.github.io/2017/11/07/Android注解/index.html">
+<meta property="og:site_name" content="Fighting">
+<meta property="og:description" content="Android注解笔记作为Android开发中熟知的注解，注解有以下作用：  降低项目的耦合度。 自动完成一些规律性的代码。 自动生成java代码，减轻开发者的工作量。  1、元注解​    元注解是由java提供的基础注解，负责注解其它注解。  @Retention: 注解保留生命周期 @Target: 注解对象的作用范围 @Inherited: 注释的类是否可以被继承 @Documented：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-07T03:18:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android注解笔记">
+<meta name="twitter:description" content="Android注解笔记作为Android开发中熟知的注解，注解有以下作用：  降低项目的耦合度。 自动完成一些规律性的代码。 自动生成java代码，减轻开发者的工作量。  1、元注解​    元注解是由java提供的基础注解，负责注解其它注解。  @Retention: 注解保留生命周期 @Target: 注解对象的作用范围 @Inherited: 注释的类是否可以被继承 @Documented：">
+  
+    <link rel="alternate" href="/atom.xml" title="Fighting" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Fighting</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">奔跑的小野藏獒</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://soupergeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Android注解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/07/Android注解/" class="article-date">
+  <time datetime="2017-11-06T16:00:00.000Z" itemprop="datePublished">2017-11-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android注解笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Android注解笔记"><a href="#Android注解笔记" class="headerlink" title="Android注解笔记"></a>Android注解笔记</h3><p>作为Android开发中熟知的注解，注解有以下作用：</p>
+<ul>
+<li>降低项目的耦合度。</li>
+<li>自动完成一些规律性的代码。</li>
+<li>自动生成java代码，减轻开发者的工作量。</li>
+</ul>
+<h4 id="1、元注解"><a href="#1、元注解" class="headerlink" title="1、元注解"></a>1、元注解</h4><p>​    元注解是由java提供的基础注解，负责注解其它注解。</p>
+<ul>
+<li>@Retention: 注解保留生命周期</li>
+<li>@Target: 注解对象的作用范围</li>
+<li>@Inherited: 注释的类是否可以被继承</li>
+<li>@Documented：Java的工具文档化注解</li>
+</ul>
+<h5 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h5><blockquote>
+<p>表示注解在什么时候生效</p>
+</blockquote>
+<ul>
+<li>SOURCE ：只在源码中生效；比如 <code>@Override</code>。</li>
+<li>CLASS：在编译class时生效。</li>
+<li>RUNTIME：运行时生效。</li>
+</ul>
+<h5 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h5><blockquote>
+<p>表示注解的范围</p>
+</blockquote>
+<ul>
+<li>TYPE：类，接口，枚举，注解类型。</li>
+<li>FIELD：类成员。（构造方法，成员变量）</li>
+<li>METHOD：方法。</li>
+<li>PARAMETER：参数。</li>
+<li>CONSTRUCTOR：构造器。</li>
+<li>LOCAL_VARIABLE：局部变量。</li>
+<li>ANNOTATION_TYPE：注解。</li>
+<li>PACKAGE：包说明。</li>
+<li>TYPE_PARAMETER：类型参数。</li>
+<li>TYPE_USE：类型使用说明。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="meta">@Retention</span>(CLASS)</div><div class="line"><span class="meta">@Target</span>(&#123;METHOD, PARAMETER, FIELD, ANNOTATION_TYPE, PACKAGE&#125;)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Nullable &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述代码表示<code>@Nullable</code>注解在编译时会判断备注解的参数是否为空。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBackgroundDrawable</span><span class="params">(@Nullable Drawable d)</span> </span>&#123;</div><div class="line">    mDecorToolbar.setBackgroundDrawable(d);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>setBackgroundDrawable</code>方法表明，参数<code>Drawable d</code>可以为null。</p>
+<h5 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h5><blockquote>
+<p>注解所作用的类，在继承时默认无法继承父类的注解。除非注解表明了@Inherited。同时Inherited声明出来的注解，只对类有效，对方法/属性无效。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://soupergeng.github.io/2017/11/07/Android注解/" data-id="cjb7awcs80006izfyd5p8a0kk" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/注解/">注解</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/15/2018年学习计划/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          2018年学习计划
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/03/五十六已然知天命/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">五十六已然知天命</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorieën</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android开发/">Android开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AS快捷键/">AS快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIP/">VIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plan-2018/">plan 2018</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/有思想/">有思想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/注解/">注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站/">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频/">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AS快捷键/" style="font-size: 10px;">AS快捷键</a> <a href="/tags/VIP/" style="font-size: 10px;">VIP</a> <a href="/tags/plan-2018/" style="font-size: 10px;">plan 2018</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/有思想/" style="font-size: 10px;">有思想</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/15/2018年学习计划/">2018年学习计划</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/07/Android注解/">Android注解笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/03/五十六已然知天命/">五十六已然知天命</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/26/推荐Android开发收藏的良心网站/">推荐Android开发收藏的良心网站</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/26/推荐Chrome的一些插件/">推荐Chrome的一些插件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 SouperGeng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
