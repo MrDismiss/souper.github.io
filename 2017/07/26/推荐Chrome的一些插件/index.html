@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="我不敢倒下，因为身后已空无一人。">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          推荐Chrome的一些插件 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://soupergeng.github.io/2017/07/26/推荐Chrome的一些插件/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('undefined')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#插件" title="插件">插件</a>
+                            
+                        </div>
+                        <h1>推荐Chrome的一些插件</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by SouperGeng on
+                            2017-07-26
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Fighting</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">关于我</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">分类</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h4 id="Gliffy-Diagrams"><a href="#Gliffy-Diagrams" class="headerlink" title="Gliffy Diagrams"></a>Gliffy Diagrams</h4><p>Gliffy Diagrams是一种全新类别的谷歌浏览器程序，它甚至可以脱机使用！</p>
+<p>现在，人人都可以快速轻松地创建具有专业外观的图表和流程图，并将它们包含在谷歌文档、演示文稿、维基百科或者网页中。</p>
+<p>特点：</p>
+<ul>
+<li>使用HTML5创建的易于使用的界面</li>
+<li>成千上万种行业标准的形状、箭头和图标</li>
+<li>网格对齐，绘图向导，形状对准和分布工具</li>
+<li>将您的图片拖放至画布上</li>
+<li>将图表导出成PNG格式（还将推出更多种文件格式）</li>
+</ul>
+<p>适合于：</p>
+<ul>
+<li>基本绘图</li>
+<li>流程图</li>
+<li>UML图表</li>
+<li>网络图表</li>
+<li>线框图和图样</li>
+<li>网站地图</li>
+<li>业务流程模型</li>
+<li>组织机构图</li>
+<li>平面图</li>
+<li>文氏图</li>
+<li>四点分析</li>
+<li>技术图这个对于画图来说就方便了许多。</li>
+</ul>
+<h4 id="Adguard-广告拦截器"><a href="#Adguard-广告拦截器" class="headerlink" title="Adguard 广告拦截器"></a>Adguard 广告拦截器</h4><p>广告拦截扩展对抗广告和弹出窗口。拦截 Facebook，Youtube 和所有其它网站的广告。</p>
+<p>Adguard 广告拦截器可有效的拦截所有网页上的所有类型的广告，甚至是在 Facebook、Youtube 以及其他万千网站上的广告！</p>
+<p>Adguard AdBlocker 可以：</p>
+<ol>
+<li>拦截所有广告，包括：</li>
+</ol>
+<ul>
+<li>视频广告（包括 Youtube 视频广告）</li>
+<li>各种媒体广告，例如视频广告，插播广告和浮动广告</li>
+<li>令人讨厌的弹窗</li>
+<li>横幅广告和文字广告（包括 Facebook 广告）</li>
+</ul>
+<ol>
+<li>加速页面载入，节省带宽，屏蔽广告和弹窗</li>
+<li>拦截各种间谍软件，广告软件和拨号安装程序（可选）</li>
+<li>通过拦截常见第三方跟踪系统保护您的隐私（可选）</li>
+<li>保护您对抗恶意和钓鱼攻击（可选）</li>
+</ol>
+<p>为什么 Adguard 广告拦截器要优于 Adblock 或 AdBlock Plus？</p>
+<ol>
+<li>Adguard 广告拦截器轻量快速。它比其它流行的解决方案节省了 1/2 左右的内存：Adblock，Adblock Plus，甚至胜过 uBlock。</li>
+<li>Adguard 可以处理反广告拦截脚本。在访问使用这样脚本的网站时您不必再关闭广告拦截器了。您只需发送投诉给我们的技术支持团队，我们会处理它。</li>
+<li>Adguard 具有简单时髦的外观。</li>
+</ol>
+<p>Adguard 广告拦截器如何保护您的隐私？</p>
+<p>您只需在 Adugard 的设置内开启“间谍软件和跟踪过滤器” 。它就完全可以移除因特网上的所有形式的跟踪。Adguard 拥有超过 5000 条规则的超大跟踪器过滤器。其甚至会大于数据库 Ghostery® 和 Disconnect。</p>
+<p>Adguard 如何移除社交媒体？</p>
+<p>您已经厌烦了滋生于您经常访问的网页上的 «Like» 按钮以及类似的小工具了吗？您只需开启 Adguard 的“社交媒体过滤器” 即可。</p>
+<p>Adguard 广告拦截器如何使您免受在线威胁？</p>
+<p>如今我们拥有超过 1,800,000 个有害网站的记录。Adguard 可以拦截已知的传播恶意软件的网站，使您的计算机免受病毒、特洛伊木马、蠕虫、间谍软件和广告软件的骚扰。Adguard 大大降低了病毒感染的风险，阻止访问有害网站以防止潜在的攻击。</p>
+<p>这个就很强大了，屏蔽各种广告。你值得拥有。</p>
+<h4 id="Tampermonkey"><a href="#Tampermonkey" class="headerlink" title="Tampermonkey"></a>Tampermonkey</h4><p>这个我已经单独写过一篇文章讲过的这个插件的使用方法了。这里就不细说了，大家可以去看一下<a href="https://soupergeng.github.io/2017/07/24/%E4%BD%BF%E7%94%A8Tampermonkey%E7%A5%9E%E5%99%A8%E6%9D%A5%E7%9C%8B%E5%90%84%E5%A4%A7%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84VIP%E8%A7%86%E9%A2%91/">使用Tampermonkey神器来看各大视频网站的VIP视频</a>这篇博客。</p>
+<h4 id="Vysor"><a href="#Vysor" class="headerlink" title="Vysor"></a>Vysor</h4><p>A window to your Android</p>
+<p>Vysor lets you view and control your Android on your computer. Easy peasy.</p>
+<h4 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h4><p>装逼利器，教你如何优雅的使用Chrome，新打开一个Tab的时候再也不是一片空白。逼格瞬间提高有木有啊。</p>
+<font color="#0099ff" size="12" face="黑体">TO BE CONTINUE</font>
+
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/07/26/推荐Android开发收藏的良心网站/" data-toggle="tooltip" data-placement="top" title="推荐Android开发收藏的良心网站">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/07/24/使用Tampermonkey神器来看各大视频网站的VIP视频/" data-toggle="tooltip" data-placement="top" title="使用Tampermonkey神器来看各大视频网站的VIP视频">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; SouperGeng 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=YenYuHsuan&repo=hexo-theme-beantech&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://soupergeng.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://soupergeng.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
