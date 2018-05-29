@@ -1,0 +1,37 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+
+127.0.0.1	ui.zhangshuzheng.cn
+
+127.0.0.1	upms.zhangshuzheng.cn
+
+127.0.0.1	cms.zhangshuzheng.cn
+
+127.0.0.1	pay.zhangshuzheng.cn
+
+127.0.0.1	ucenter.zhangshuzheng.cn
+
+127.0.0.1	wechat.zhangshuzheng.cn
+
+127.0.0.1	api.zhangshuzheng.cn
+
+127.0.0.1	oss.zhangshuzheng.cn
+
+127.0.0.1 config.zhangshuzheng.cn
+
+127.0.0.1	zkserver
+
+127.0.0.1	rdserver
+
+127.0.0.1	dbserver
+
+127.0.0.1	mqserver
+
+
