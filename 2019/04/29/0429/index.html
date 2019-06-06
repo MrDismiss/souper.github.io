@@ -112,17 +112,17 @@
 
 
 
-<meta name="description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME     id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间    2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
+<meta name="description" content="1、活体检测   会不会存在绕过活体检测直接进行下面的操作？ 活体-&amp;gt;比对-&amp;gt;业务   活体检测的照片重复利用，可伪造？  2、H5并发量服务器升级">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fighting">
-<meta property="og:url" content="https://soupergeng.github.io/2019/02/28/用户签到表设计/index.html">
+<meta property="og:url" content="https://soupergeng.github.io/2019/04/29/0429/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME     id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间    2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
+<meta property="og:description" content="1、活体检测   会不会存在绕过活体检测直接进行下面的操作？ 活体-&amp;gt;比对-&amp;gt;业务   活体检测的照片重复利用，可伪造？  2、H5并发量服务器升级">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T01:11:41.414Z">
+<meta property="og:updated_time" content="2019-04-29T03:23:16.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fighting">
-<meta name="twitter:description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME     id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间    2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
+<meta name="twitter:description" content="1、活体检测   会不会存在绕过活体检测直接进行下面的操作？ 活体-&amp;gt;比对-&amp;gt;业务   活体检测的照片重复利用，可伪造？  2、H5并发量服务器升级">
 
 
 
@@ -152,7 +152,7 @@
 
 
 
-  <link rel="canonical" href="https://soupergeng.github.io/2019/02/28/用户签到表设计/">
+  <link rel="canonical" href="https://soupergeng.github.io/2019/04/29/0429/">
 
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://soupergeng.github.io/2019/02/28/用户签到表设计/">
+    <link itemprop="mainEntityOfPage" href="https://soupergeng.github.io/2019/04/29/0429/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SouperGeng">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-28T09:56:15+08:00">
-                2019-02-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-29T10:10:11+08:00">
+                2019-04-29
               </time>
             
 
@@ -362,75 +362,15 @@
       
 
       
-        <h2 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h2><p>###1、LCB_USER_SIGN</p>
-<blockquote>
-<p>用户签到表</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:left">ACCOUNT_ID</th>
-<th style="text-align:left">SIGN_START_TIME</th>
-<th>SIGN_END_TIME</th>
-<th>SIGN_COUNT</th>
-<th>CREATE_TIME</th>
-<th>UPDATE_TIME</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">id</td>
-<td style="text-align:left">用户ID</td>
-<td style="text-align:left">连续签到开始时间</td>
-<td>连续签到结束时间</td>
-<td>连续签到天数</td>
-<td>创建时间</td>
-<td>更新时间</td>
-</tr>
-</tbody>
-</table>
-<h3 id="2、LCB-USER-SIGN-LOG"><a href="#2、LCB-USER-SIGN-LOG" class="headerlink" title="2、LCB_USER_SIGN_LOG"></a>2、LCB_USER_SIGN_LOG</h3><blockquote>
-<p>用户签到记录表，记录用户的每次签到路径</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>ACCOUNT_ID</th>
-<th>SIGN_TIME</th>
-<th>SIGN_STATUS</th>
-<th>POINT_COUNT</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>用户ID</td>
-<td>签到时间</td>
-<td>签到状态</td>
-<td>积分值</td>
-</tr>
-</tbody>
-</table>
-<h5 id="3、伪代码"><a href="#3、伪代码" class="headerlink" title="3、伪代码"></a>3、伪代码</h5><ul>
-<li><p>用户签到显示逻辑</p>
+        <p>1、活体检测 </p>
 <ul>
-<li>用户首次进入 控制滚动天数</li>
+<li>会不会存在绕过活体检测直接进行下面的操作？<ul>
+<li>活体-&gt;比对-&gt;业务</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(account)&#123;</span><br><span class="line">    <span class="comment">//判读签到逻辑</span></span><br><span class="line">    签到结束时间是否是今天 是 已签到 不是 未签到</span><br><span class="line">    返回签到状态，签到起止时间(今天-今天+<span class="number">7</span>天)</span><br><span class="line">    signStatus 今日签到状态</span><br><span class="line">    signCount 连续签到天数</span><br><span class="line">    dateList&lt;&gt; 签到时间周期表</span><br><span class="line">        - date</span><br><span class="line">        - status <span class="number">0</span>未签到 <span class="number">1</span>已签到</span><br><span class="line">        - isToday 是否是第七天 是最后一天 不是 重新一周期</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    signStatus 今日签到状态</span><br><span class="line">    signCount 连续签到天数</span><br><span class="line">    dateList&lt;&gt; 签到时间周期表</span><br><span class="line">        - date</span><br><span class="line">        - status <span class="number">0</span>未签到 <span class="number">1</span>已签到</span><br><span class="line">        - isToday 是否是第七天 是最后一天 不是 重新一周期</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>用户签到事件逻辑</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">if(!ACCOUNT_ID)&#123;</span><br><span class="line">    //插入</span><br><span class="line">    </span><br><span class="line">&#125; else &#123;</span><br><span class="line">    //更新</span><br><span class="line">    //1、今天是否已签到</span><br><span class="line">    if(todaySign)&#123;</span><br><span class="line">        return &quot;1&quot;;</span><br><span class="line">    &#125; else&#123;</span><br><span class="line">        SIGN_COUNT+=1;</span><br><span class="line">        </span><br><span class="line">        SIGN_END_TIME = today;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">//通知积分系统。。</span><br><span class="line">//更新日志(获取积分值&amp;成功与否)</span><br></pre></td></tr></table></figure>
-</li>
+<li>活体检测的照片重复利用，可伪造？</li>
 </ul>
-<h2 id="积分任务"><a href="#积分任务" class="headerlink" title="积分任务"></a>积分任务</h2><p>（分享，实名，绑定）</p>
-<p>类型</p>
-<p>时间</p>
-<p>用户</p>
-<p>加通知用户中心接口</p>
-<h2 id="积分明细"><a href="#积分明细" class="headerlink" title="积分明细"></a>积分明细</h2><p>参考积分系统文档</p>
-<h2 id="POP图"><a href="#POP图" class="headerlink" title="POP图"></a>POP图</h2><p>##广告位</p>
+<p>2、H5并发量服务器升级</p>
 
       
     </div>
@@ -455,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/10/Android8.0手机 覆盖安装页面未启动/" rel="next" title="Android8.0手机 覆盖安装页面未启动">
-                <i class="fa fa-chevron-left"></i> Android8.0手机 覆盖安装页面未启动
+              <a href="/2019/03/21/Web/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -464,6 +404,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/06/Java 面试题和答案/" rel="prev" title="Java面试题和答案">
+                Java面试题和答案 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -515,17 +459,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -542,7 +477,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -553,7 +488,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -564,7 +499,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -597,22 +532,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#签到"><span class="nav-number">1.</span> <span class="nav-text">签到</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2、LCB-USER-SIGN-LOG"><span class="nav-number">1.1.</span> <span class="nav-text">2、LCB_USER_SIGN_LOG</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3、伪代码"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">3、伪代码</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#积分任务"><span class="nav-number">2.</span> <span class="nav-text">积分任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#积分明细"><span class="nav-number">3.</span> <span class="nav-text">积分明细</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POP图"><span class="nav-number">4.</span> <span class="nav-text">POP图</span></a></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
