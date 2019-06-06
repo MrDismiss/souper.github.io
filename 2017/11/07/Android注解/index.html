@@ -422,8 +422,10 @@
 <li>TYPE_USE：类型使用说明。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention</span>(CLASS)</span><br><span class="line"><span class="meta">@Target</span>(&#123;METHOD, PARAMETER, FIELD, ANNOTATION_TYPE, PACKAGE&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Nullable &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>上述代码表示<code>@Nullable</code>注解在编译时会判断备注解的参数是否为空。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBackgroundDrawable</span><span class="params">(@Nullable Drawable d)</span> </span>&#123;</span><br><span class="line">    mDecorToolbar.setBackgroundDrawable(d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><code>setBackgroundDrawable</code>方法表明，参数<code>Drawable d</code>可以为null。</p>
 <h5 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h5><blockquote>
 <p>注解所作用的类，在继承时默认无法继承父类的注解。除非注解表明了@Inherited。同时Inherited声明出来的注解，只对类有效，对方法/属性无效。</p>
@@ -549,7 +551,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -408,13 +408,14 @@ public String getName() {
 
 public void setName(String name) {
     this.name = name;
-}
-</code></pre><p>}</p>
+}</code></pre><p>}</p>
 <p>Cat c1 = new Cat(“王磊”);<br>Cat c2 = new Cat(“王磊”);<br>System.out.println(c1.equals(c2)); // false<br>输出结果出乎我们的意料，竟然是 false？这是怎么回事，看了 equals 源码就知道了，源码如下：</p>
-<p>public boolean equals(Object obj) {<br>​        return (this == obj);<br>}<br>原来 equals 本质上就是 ==。</p>
+<p>public boolean equals(Object obj) {<br>​        return (this == obj);<br>}
+原来 equals 本质上就是 ==。</p>
 <p>那问题来了，两个相同值的 String 对象，为什么返回的是 true？代码如下：</p>
 <p>String s1 = new String(“老王”);<br>String s2 = new String(“老王”);<br>System.out.println(s1.equals(s2)); // true<br>同样的，当我们进入 String 的 equals 方法，找到了答案，代码如下：</p>
-<p>public boolean equals(Object anObject) {<br>​    if (this == anObject) {<br>​        return true;<br>​    }<br>​    if (anObject instanceof String) {<br>​        String anotherString = (String)anObject;<br>​        int n = value.length;<br>​        if (n == anotherString.value.length) {<br>​            char v1[] = value;<br>​            char v2[] = anotherString.value;<br>​            int i = 0;<br>​            while (n– != 0) {<br>​                if (v1[i] != v2[i])<br>​                    return false;<br>​                i++;<br>​            }<br>​            return true;<br>​        }<br>​    }<br>​    return false;<br>}<br>原来是 String 重写了 Object 的 equals 方法，把引用比较改成了值比较。</p>
+<p>public boolean equals(Object anObject) {<br>​    if (this == anObject) {<br>​        return true;<br>​    }<br>​    if (anObject instanceof String) {<br>​        String anotherString = (String)anObject;<br>​        int n = value.length;<br>​        if (n == anotherString.value.length) {<br>​            char v1[] = value;<br>​            char v2[] = anotherString.value;<br>​            int i = 0;<br>​            while (n– != 0) {<br>​                if (v1[i] != v2[i])<br>​                    return false;<br>​                i++;<br>​            }<br>​            return true;<br>​        }<br>​    }<br>​    return false;<br>}
+原来是 String 重写了 Object 的 equals 方法，把引用比较改成了值比较。</p>
 <p>总结 ：== 对于基本类型来说是值比较，对于引用类型来说是比较的是引用；而 equals 默认情况下是引用比较，只是很多类重新了 equals 方法，比如 String、Integer 等把它变成了值比较，所以一般情况下 equals 比较的是值是否相等。</p>
 <ol start="3">
 <li><h2 id="两个对象的-hashCode-相同，则-equals-也一定为-true，对吗？"><a href="#两个对象的-hashCode-相同，则-equals-也一定为-true，对吗？" class="headerlink" title="两个对象的 hashCode() 相同，则 equals() 也一定为 true，对吗？"></a>两个对象的 hashCode() 相同，则 equals() 也一定为 true，对吗？</h2></li>
@@ -461,7 +462,8 @@ public void setName(String name) {
 </li>
 </ol>
 <p>示例代码：</p>
-<p>abstract class Cat {<br>​    public static void sayHi() {<br>​        System. out. println(“hi~”);<br>​    }<br>}<br>上面代码，抽象类并没有抽象方法但完全可以正常运行。</p>
+<p>abstract class Cat {<br>​    public static void sayHi() {<br>​        System. out. println(“hi~”);<br>​    }<br>}
+上面代码，抽象类并没有抽象方法但完全可以正常运行。</p>
 <ol start="12">
 <li><h2 id="普通类和抽象类有哪些区别？"><a href="#普通类和抽象类有哪些区别？" class="headerlink" title="普通类和抽象类有哪些区别？"></a>普通类和抽象类有哪些区别？</h2></li>
 </ol>
@@ -554,7 +556,8 @@ public void setName(String name) {
 <li><h2 id="Iterator-怎么使用？有什么特点？"><a href="#Iterator-怎么使用？有什么特点？" class="headerlink" title="Iterator 怎么使用？有什么特点？"></a>Iterator 怎么使用？有什么特点？</h2></li>
 </ol>
 <p>Iterator 使用代码如下：</p>
-<p>List<string> list = new ArrayList&lt;&gt;();<br>Iterator<string> it = list. iterator();<br>while(it. hasNext()){<br>  String obj = it. next();<br>  System. out. println(obj);<br>}<br>Iterator 的特点是更加安全，因为它可以确保，在当前遍历的集合元素被更改的时候，就会抛出 ConcurrentModificationException 异常。</string></string></p>
+<p>List<string> list = new ArrayList&lt;&gt;();<br>Iterator<string> it = list. iterator();<br>while(it. hasNext()){<br>  String obj = it. next();<br>  System. out. println(obj);<br>}
+Iterator 的特点是更加安全，因为它可以确保，在当前遍历的集合元素被更改的时候，就会抛出 ConcurrentModificationException 异常。</string></string></p>
 <ol start="33">
 <li><h2 id="Iterator-和-ListIterator-有什么区别？"><a href="#Iterator-和-ListIterator-有什么区别？" class="headerlink" title="Iterator 和 ListIterator 有什么区别？"></a>Iterator 和 ListIterator 有什么区别？</h2></li>
 </ol>
@@ -989,7 +992,8 @@ public void setName(String name) {
 <p>MyBatis 自定义插件针对 MyBatis 四大对象（Executor、StatementHandler、ParameterHandler、ResultSetHandler）进行拦截：</p>
 <p>Executor：拦截内部执行器，它负责调用 StatementHandler 操作数据库，并把结果集通过 ResultSetHandler 进行自动映射，另外它还处理了二级缓存的操作；<br>StatementHandler：拦截 SQL 语法构建的处理，它是 MyBatis 直接和数据库执行 SQL 脚本的对象，另外它也实现了 MyBatis 的一级缓存；<br>ParameterHandler：拦截参数的处理；<br>ResultSetHandler：拦截结果集的处理。<br>自定义插件实现关键</p>
 <p>MyBatis 插件要实现 Interceptor 接口，接口包含的方法，如下：</p>
-<p>public interface Interceptor {<br>   Object intercept(Invocation invocation) throws Throwable;<br>   Object plugin(Object target);<br>   void setProperties(Properties properties);<br>}<br>setProperties 方法是在 MyBatis 进行配置插件的时候可以配置自定义相关属性，即：接口实现对象的参数配置；<br>plugin 方法是插件用于封装目标对象的，通过该方法我们可以返回目标对象本身，也可以返回一个它的代理，可以决定是否要进行拦截进而决定要返回一个什么样的目标对象，官方提供了示例：return Plugin. wrap(target, this)；<br>intercept 方法就是要进行拦截的时候要执行的方法。<br>自定义插件实现示例</p>
+<p>public interface Interceptor {<br>   Object intercept(Invocation invocation) throws Throwable;<br>   Object plugin(Object target);<br>   void setProperties(Properties properties);<br>}
+setProperties 方法是在 MyBatis 进行配置插件的时候可以配置自定义相关属性，即：接口实现对象的参数配置；<br>plugin 方法是插件用于封装目标对象的，通过该方法我们可以返回目标对象本身，也可以返回一个它的代理，可以决定是否要进行拦截进而决定要返回一个什么样的目标对象，官方提供了示例：return Plugin. wrap(target, this)；<br>intercept 方法就是要进行拦截的时候要执行的方法。<br>自定义插件实现示例</p>
 <p>官方插件实现：</p>
 <p>@Intercepts({@Signature(type = Executor. class, method = “query”,<br>​        args = {MappedStatement. class, Object. class, RowBounds. class, ResultHandler. class})})<br>public class TestInterceptor implements Interceptor {<br>   public Object intercept(Invocation invocation) throws Throwable {<br>​     Object target = invocation. getTarget(); //被代理对象<br>​     Method method = invocation. getMethod(); //代理方法<br>​     Object[] args = invocation. getArgs(); //方法参数<br>​     // do something . . . . . .  方法拦截前执行代码块<br>​     Object result = invocation. proceed();<br>​     // do something . . . . . . . 方法拦截后执行代码块<br>​     return result;<br>   }<br>   public Object plugin(Object target) {<br>​     return Plugin. wrap(target, this);<br>   }<br>}</p>
 <h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><ol start="135">
@@ -1282,8 +1286,8 @@ public void setName(String name) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/29/0429/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/03/04/用户签到表设计/" rel="next" title="用户签到表设计">
+                <i class="fa fa-chevron-left"></i> 用户签到表设计
               </a>
             
           </div>
@@ -1369,7 +1373,7 @@ public void setName(String name) {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

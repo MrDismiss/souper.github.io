@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="先设置JSP文件的头部 然后 copy html文件 依次执行一下操作  1 、JSP页面头部jsp头部必须使用&amp;lt;%@ %&amp;gt;代码包裹起来 12&amp;lt;%@ page language=&quot;java&quot;    pageEncoding=&quot;utf-8&quot;%&amp;gt; 其次 全局变量要用&amp;lt;% %&amp;gt;  12&amp;lt;% String path = request.getContextPat">
+<meta name="description" content="先设置JSP文件的头部 然后 copy html文件 依次执行一下操作  1 、JSP页面头部jsp头部必须使用&amp;lt;%@ %&amp;gt;代码包裹起来 12&amp;lt;%@ page language=&quot;java&quot;    pageEncoding=&quot;utf-8&quot;%&amp;gt;  其次 全局变量要用&amp;lt;% %&amp;gt;  12&amp;lt;% String path = request.getContextPa">
 <meta name="keywords" content="jsp,html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML转JSP页面注意事项">
 <meta property="og:url" content="https://soupergeng.github.io/2018/05/29/HTML转JSP页面注意事项/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="先设置JSP文件的头部 然后 copy html文件 依次执行一下操作  1 、JSP页面头部jsp头部必须使用&amp;lt;%@ %&amp;gt;代码包裹起来 12&amp;lt;%@ page language=&quot;java&quot;    pageEncoding=&quot;utf-8&quot;%&amp;gt; 其次 全局变量要用&amp;lt;% %&amp;gt;  12&amp;lt;% String path = request.getContextPat">
+<meta property="og:description" content="先设置JSP文件的头部 然后 copy html文件 依次执行一下操作  1 、JSP页面头部jsp头部必须使用&amp;lt;%@ %&amp;gt;代码包裹起来 12&amp;lt;%@ page language=&quot;java&quot;    pageEncoding=&quot;utf-8&quot;%&amp;gt;  其次 全局变量要用&amp;lt;% %&amp;gt;  12&amp;lt;% String path = request.getContextPa">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-05-29T03:06:37.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML转JSP页面注意事项">
-<meta name="twitter:description" content="先设置JSP文件的头部 然后 copy html文件 依次执行一下操作  1 、JSP页面头部jsp头部必须使用&amp;lt;%@ %&amp;gt;代码包裹起来 12&amp;lt;%@ page language=&quot;java&quot;    pageEncoding=&quot;utf-8&quot;%&amp;gt; 其次 全局变量要用&amp;lt;% %&amp;gt;  12&amp;lt;% String path = request.getContextPat">
+<meta name="twitter:description" content="先设置JSP文件的头部 然后 copy html文件 依次执行一下操作  1 、JSP页面头部jsp头部必须使用&amp;lt;%@ %&amp;gt;代码包裹起来 12&amp;lt;%@ page language=&quot;java&quot;    pageEncoding=&quot;utf-8&quot;%&amp;gt;  其次 全局变量要用&amp;lt;% %&amp;gt;  12&amp;lt;% String path = request.getContextPa">
 
 
 
@@ -368,11 +368,14 @@
 </blockquote>
 <h3 id="1-、JSP页面头部"><a href="#1-、JSP页面头部" class="headerlink" title="1 、JSP页面头部"></a>1 、JSP页面头部</h3><p>jsp头部必须使用&lt;%@ %&gt;代码包裹起来</p>
 <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span></span><br><span class="line">    pageEncoding=<span class="string">"utf-8"</span>%&gt;</span><br></pre></td></tr></table></figure>
+
 <p>其次 全局变量要用&lt;% %&gt; </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;% String path = request.getContextPath(); </span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
 <p>拿到服务器请求上下文的路径。</p>
 <h3 id="2-、JSP页面部分"><a href="#2-、JSP页面部分" class="headerlink" title="2 、JSP页面部分"></a>2 、JSP页面部分</h3><p>1、页面部分要设置base标签 表示路径使用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;base href=&quot;&lt;%=path%&gt;/&quot;&gt;</span><br></pre></td></tr></table></figure>
+
 <p>2、各个资源放置相应的位置</p>
 <ul>
 <li>images</li>
@@ -381,6 +384,7 @@
 </ul>
 <p>3、修改html里资源的路径，指向项目路径</p>
 <h3 id="3、Java代码部分"><a href="#3、Java代码部分" class="headerlink" title="3、Java代码部分"></a>3、Java代码部分</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 关于我们 </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> model</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> request accountid token</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> response</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> 页面路径</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@RequestMapping</span>(value = <span class="string">"/aboutUs"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getAboutUs</span><span class="params">(ModelMap model,HttpServletRequest request, HttpServletResponse response)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"/aboutUs/index"</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -502,7 +506,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

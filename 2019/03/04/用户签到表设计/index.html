@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME     id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间    2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
+<meta name="description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME    id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间   2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
 <meta name="keywords" content="建表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用户签到表设计">
 <meta property="og:url" content="https://soupergeng.github.io/2019/03/04/用户签到表设计/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME     id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间    2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
+<meta property="og:description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME    id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间   2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-03-06T01:14:24.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用户签到表设计">
-<meta name="twitter:description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME     id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间    2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
+<meta name="twitter:description" content="签到###1、LCB_USER_SIGN  用户签到表     ID ACCOUNT_ID SIGN_START_TIME SIGN_END_TIME SIGN_COUNT CREATE_TIME UPDATE_TIME    id 用户ID 连续签到开始时间 连续签到结束时间 连续签到天数 创建时间 更新时间   2、LCB_USER_SIGN_LOG 用户签到记录表，记录用户的每次签到路径">
 
 
 
@@ -392,27 +392,25 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:left">ACCOUNT_ID</th>
-<th style="text-align:left">SIGN_START_TIME</th>
+<th align="left">ID</th>
+<th align="left">ACCOUNT_ID</th>
+<th align="left">SIGN_START_TIME</th>
 <th>SIGN_END_TIME</th>
 <th>SIGN_COUNT</th>
 <th>CREATE_TIME</th>
 <th>UPDATE_TIME</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">id</td>
-<td style="text-align:left">用户ID</td>
-<td style="text-align:left">连续签到开始时间</td>
+<tbody><tr>
+<td align="left">id</td>
+<td align="left">用户ID</td>
+<td align="left">连续签到开始时间</td>
 <td>连续签到结束时间</td>
 <td>连续签到天数</td>
 <td>创建时间</td>
 <td>更新时间</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="2、LCB-USER-SIGN-LOG"><a href="#2、LCB-USER-SIGN-LOG" class="headerlink" title="2、LCB_USER_SIGN_LOG"></a>2、LCB_USER_SIGN_LOG</h3><blockquote>
 <p>用户签到记录表，记录用户的每次签到路径</p>
 </blockquote>
@@ -426,16 +424,14 @@
 <th>POINT_COUNT</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>id</td>
 <td>用户ID</td>
 <td>签到时间</td>
 <td>签到状态</td>
 <td>积分值</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h5 id="3、伪代码"><a href="#3、伪代码" class="headerlink" title="3、伪代码"></a>3、伪代码</h5><ul>
 <li><p>用户签到显示逻辑</p>
 <ul>
@@ -445,6 +441,7 @@
 </li>
 <li><p>用户签到事件逻辑</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">if(!ACCOUNT_ID)&#123;</span><br><span class="line">    //插入</span><br><span class="line">    </span><br><span class="line">&#125; else &#123;</span><br><span class="line">    //更新</span><br><span class="line">    //1、今天是否已签到</span><br><span class="line">    if(todaySign)&#123;</span><br><span class="line">        return &quot;1&quot;;</span><br><span class="line">    &#125; else&#123;</span><br><span class="line">        SIGN_COUNT+=1;</span><br><span class="line">        </span><br><span class="line">        SIGN_END_TIME = today;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">//通知积分系统。。</span><br><span class="line">//更新日志(获取积分值&amp;成功与否)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="积分任务"><a href="#积分任务" class="headerlink" title="积分任务"></a>积分任务</h2><p>（分享，实名，绑定）</p>
@@ -494,8 +491,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/21/Web/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/06/Java 面试题和答案/" rel="prev" title="Java面试题和答案">
+                Java面试题和答案 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -575,7 +572,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
