@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="Java内存模型（运行时数据区） 堆，栈，本地方法栈，方法区，程序计数器  栈 FILO 先进后出 存放指针，变量 线程栈：方法栈帧，局部变量，操作数栈，动态链接，方法出口 javap -c *.class JVM看指令集  方法出口 指的是方法运行完之后知道要运行下面的哪一步   方法区，常量，静态变量，类信息  本地方法栈（native） 底层是C语言实现。本地方法的存放栈">
+<meta name="description" content="Java内存模型（运行时数据区） 堆，栈，本地方法栈，方法区，程序计数器  栈 FILO 先进后出 存放指针，变量 线程栈：方法栈帧，局部变量，操作数栈，动态链接，方法出口 javap -c *.class JVM看指令集  方法出口 指的是方法运行完之后知道要运行下面的哪一步   方法区，常量，静态变量，类信息  本地方法栈（native） 底层是C语言实现。本地方法的存放栈  堆：伊甸园区（">
 <meta name="keywords" content="虚拟机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java虚拟机相关">
 <meta property="og:url" content="https://soupergeng.github.io/2019/12/19/Java虚拟机相关/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="Java内存模型（运行时数据区） 堆，栈，本地方法栈，方法区，程序计数器  栈 FILO 先进后出 存放指针，变量 线程栈：方法栈帧，局部变量，操作数栈，动态链接，方法出口 javap -c *.class JVM看指令集  方法出口 指的是方法运行完之后知道要运行下面的哪一步   方法区，常量，静态变量，类信息  本地方法栈（native） 底层是C语言实现。本地方法的存放栈">
+<meta property="og:description" content="Java内存模型（运行时数据区） 堆，栈，本地方法栈，方法区，程序计数器  栈 FILO 先进后出 存放指针，变量 线程栈：方法栈帧，局部变量，操作数栈，动态链接，方法出口 javap -c *.class JVM看指令集  方法出口 指的是方法运行完之后知道要运行下面的哪一步   方法区，常量，静态变量，类信息  本地方法栈（native） 底层是C语言实现。本地方法的存放栈  堆：伊甸园区（">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-19T08:26:03.083Z">
+<meta property="og:updated_time" content="2019-12-24T08:28:19.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java虚拟机相关">
-<meta name="twitter:description" content="Java内存模型（运行时数据区） 堆，栈，本地方法栈，方法区，程序计数器  栈 FILO 先进后出 存放指针，变量 线程栈：方法栈帧，局部变量，操作数栈，动态链接，方法出口 javap -c *.class JVM看指令集  方法出口 指的是方法运行完之后知道要运行下面的哪一步   方法区，常量，静态变量，类信息  本地方法栈（native） 底层是C语言实现。本地方法的存放栈">
+<meta name="twitter:description" content="Java内存模型（运行时数据区） 堆，栈，本地方法栈，方法区，程序计数器  栈 FILO 先进后出 存放指针，变量 线程栈：方法栈帧，局部变量，操作数栈，动态链接，方法出口 javap -c *.class JVM看指令集  方法出口 指的是方法运行完之后知道要运行下面的哪一步   方法区，常量，静态变量，类信息  本地方法栈（native） 底层是C语言实现。本地方法的存放栈  堆：伊甸园区（">
 
 
 
@@ -379,10 +379,34 @@
 </li>
 <li><p>本地方法栈（native） 底层是C语言实现。本地方法的存放栈</p>
 </li>
+<li><p>堆：伊甸园区（160M），幸存区from，to区（40M），老年区（400M） 共600M的北村比例分配</p>
+<ul>
+<li><p>Eden：Minor GC 垃圾对象（不在持有引用的对象）在堆栈链条上的不是垃圾对象，存活的对象。</p>
+<p>GC roots根：线程栈的本地变量，静态变量，本地方法栈的引用变量。</p>
+<p>垃圾清理算法：复制算法，分代年龄清理一次增加一次，当分代年龄增加到15的时候，对象存放到老年代。</p>
+<p>对象生命周期的动态演示。 jvisualvm</p>
+<p>物理内存的1/64作为初始化大小，最大是物理内存的1/4</p>
+<p>GC日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[GC (Allocation Failure) [PSYoungGen: 1528K-&gt;496K(2048K)] 1528K-&gt;1257K(7680K), 0.0013191 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[GC (Allocation Failure) [PSYoungGen: 2029K-&gt;496K(2048K)] 2790K-&gt;2787K(7680K), 0.0012178 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[GC (Allocation Failure) [PSYoungGen: 2031K-&gt;496K(2048K)] 4323K-&gt;4374K(7680K), 0.0011242 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Ergonomics) [PSYoungGen: 496K-&gt;0K(2048K)] [ParOldGen: 3878K-&gt;4140K(5632K)] 4374K-&gt;4140K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0046182 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] </span><br><span class="line">[Full GC (Ergonomics) [PSYoungGen: 1535K-&gt;504K(2048K)] [ParOldGen: 4140K-&gt;5162K(5632K)] 5675K-&gt;5667K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0043358 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Ergonomics) [PSYoungGen: 1536K-&gt;1524K(2048K)] [ParOldGen: 5162K-&gt;5151K(5632K)] 6698K-&gt;6676K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0035214 secs] [Times: user=0.01 sys=0.01, real=0.01 secs] </span><br><span class="line">[Full GC (Ergonomics) [PSYoungGen: 1532K-&gt;1532K(2048K)] [ParOldGen: 5151K-&gt;5151K(5632K)] 6684K-&gt;6684K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0021259 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Ergonomics) [PSYoungGen: 1536K-&gt;1533K(2048K)] [ParOldGen: 5549K-&gt;5545K(5632K)] 7085K-&gt;7079K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0030483 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Ergonomics) [PSYoungGen: 1533K-&gt;1533K(2048K)] [ParOldGen: 5626K-&gt;5626K(5632K)] 7159K-&gt;7159K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0014371 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Allocation Failure) [PSYoungGen: 1533K-&gt;1533K(2048K)] [ParOldGen: 5626K-&gt;5614K(5632K)] 7159K-&gt;7147K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0040149 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] </span><br><span class="line">[Full GC (Ergonomics) Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space</span><br><span class="line">	at com.gkz.code.jvm.HeapTest.&lt;init&gt;(HeapTest.java:13)</span><br><span class="line">[PSYoungGen: 1533K-&gt;1533K(2048K)] [ParOldGen: 5630K-&gt;5630K(5632K)] 7163K-&gt;7163K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0015037 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Allocation Failure) [PSYoungGen: 1533K-&gt;1533K(2048K)] [ParOldGen: 5630K-&gt;5630K(5632K)] 7163K-&gt;7163K(7680K), [Metaspace: 2680K-&gt;2680K(1056768K)], 0.0014325 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Ergonomics) [PSYoungGen: 1536K-&gt;0K(2048K)] [ParOldGen: 5631K-&gt;342K(5632K)] 7167K-&gt;342K(7680K), [Metaspace: 2706K-&gt;2706K(1056768K)], 0.0037337 secs] [Times: user=0.02 sys=0.00, real=0.00 secs] </span><br><span class="line">Heap</span><br><span class="line"> PSYoungGen      total 2048K, used 48K [0x00000007bfd80000, 0x00000007c0000000, 0x00000007c0000000)</span><br><span class="line">  eden space 1536K, 3% used [0x00000007bfd80000,0x00000007bfd8c2a0,0x00000007bff00000)</span><br><span class="line">  from space 512K, 0% used [0x00000007bff00000,0x00000007bff00000,0x00000007bff80000)</span><br><span class="line">  to   space 512K, 0% used [0x00000007bff80000,0x00000007bff80000,0x00000007c0000000)</span><br><span class="line"> ParOldGen       total 5632K, used 342K [0x00000007bf800000, 0x00000007bfd80000, 0x00000007bfd80000)</span><br><span class="line">  object space 5632K, 6% used [0x00000007bf800000,0x00000007bf855860,0x00000007bfd80000)</span><br><span class="line"> Metaspace       used 2713K, capacity 4486K, committed 4864K, reserved 1056768K</span><br><span class="line">  class space    used 292K, capacity 386K, committed 512K, reserved 1048576K</span><br><span class="line">	at com.gkz.code.jvm.HeapTest.main(HeapTest.java:23)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
+<pre><code>springboot项目JVM调优
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-XX:MetaspaceSize=128m （元空间默认大小）</span><br><span class="line">-XX:MaxMetaspaceSize=128m （元空间最大大小）</span><br><span class="line">-Xms1024m （堆最大大小）</span><br><span class="line">-Xmx1024m （堆默认大小）</span><br><span class="line">-Xmn256m （新生代大小）</span><br><span class="line">-Xss256k （棧最大深度大小）</span><br><span class="line">-XX:SurvivorRatio=8 （新生代分区比例 8:2）</span><br><span class="line">-XX:+UseConcMarkSweepGC （指定使用的垃圾收集器，这里使用CMS收集器）</span><br><span class="line">-XX:+PrintGCDetails （打印详细的GC日志）</span><br></pre></td></tr></table></figure>
+
+
+优先调整FULL GC 减少full gc的问题。默认当年老代的内存达到2/3内存时会执行full gc 
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">bpf       2035  0.1  3.1 4168700 512756 ?      Sl   Dec08  35:09 java -jar -Xms512m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m -XX:+UseParallelGC bpf_pf_router.jar</span><br><span class="line">bpf       2037  0.0  2.9 4186948 489868 ?      Sl   Dec08  17:54 java -jar -Xms512m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m -XX:+UseParallelGC bpf_pf_fileserver.jar</span><br><span class="line">bpf       2040  0.0  2.9 4145864 478528 ?      Sl   Dec08  17:13 java -jar -Xms512m -Xmx512m bpf_pf_access.jar</span><br><span class="line">bpf       2041  0.0  3.3 4154312 543988 ?      Sl   Dec08  18:33 java -jar -Xms512m -Xmx512m bpf_if_faceforks_h5.jar</span><br><span class="line">bpf       2042  0.1  2.1 3851880 352400 ?      Sl   Dec08  37:41 java -jar -Xms256m -Xmx256m bpf_pf_monitor.jar</span><br><span class="line">bpf       2043  3.7  4.9 4799168 807780 ?      Sl   Dec08 861:02 java -jar -Xms1024m -Xmx1024m -XX:PermSize=64m -XX:MaxPermSize=128m -XX:+UseParallelGC bpf_pf_process.jar</span><br><span class="line">bpf       2044  0.0  5.2 4249960 852392 ?      Sl   Dec08  20:24 java -jar -Xms512m -Xmx512m bpf_if_faceforks.jar</span><br><span class="line">bpf       2045  0.0  2.0 3874144 331388 ?      Sl   Dec08  17:27 java -jar -Xms256m -Xmx256m bpf_if_ocrforks.jar</span><br><span class="line">bpf       2047  0.0  2.0 3874340 340536 ?      Sl   Dec08  16:23 java -jar -Xms256m -Xmx256m bpf_pf_email.jar</span><br><span class="line">bpf       2052  0.0  3.7 4249376 609416 ?      Sl   Dec08  18:25 java -jar -Xms512m -Xmx512m bpf_pf_platform.jar</span><br></pre></td></tr></table></figure>
+
+
+性能调优详见 https://www.cnblogs.com/zhguang/p/Java-JVM-GC.html</code></pre>
       
     </div>
     
@@ -421,6 +445,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/26/高级Java程序员面试题汇总/" rel="prev" title="高级Java程序员面试题汇总">
+                高级Java程序员面试题汇总 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -490,7 +518,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -512,7 +540,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -559,7 +587,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
